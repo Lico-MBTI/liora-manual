@@ -1,0 +1,564 @@
+@charset "utf-8";
+
+/* ===================================================
+   top.css - トップページ＆サイド・オーダー風UI固有スタイル
+   =================================================== */
+
+/* ---------------------------------------------------
+   1. トップページ専用ヘッダー & セクション装飾
+--------------------------------------------------- */
+.page-header {
+  margin-bottom: 32px;
+  border-bottom: 2px solid #8b5cf6;
+  padding-bottom: 16px;
+}
+
+.page-title {
+  font-size: 2rem;
+  color: var(--text-bright);
+  margin-bottom: 8px;
+  text-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
+}
+
+.page-subtitle {
+  color: #b388ff;
+  font-size: 0.95rem;
+}
+
+/* セクション枠（サイド・オーダー背景・発光仕様） */
+.manual-section {
+  background-color: #120a21;
+  border: 2px solid #8b5cf6;
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.3);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  position: relative;
+  backdrop-filter: blur(4px);
+}
+
+.section-title {
+  font-size: 1.25rem;
+  color: var(--text-bright);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  border-left: 4px solid var(--so-neon-purple);
+  padding-left: 10px;
+}
+
+.section-title.warn {
+  border-left-color: var(--so-shadow-border);
+}
+
+.section-title.gold {
+  border-left-color: #ffd700;
+}
+
+/* リスト・スペック表現 */
+.spec-list {
+  list-style: none;
+}
+
+.spec-list li {
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed rgba(192, 132, 252, 0.2);
+}
+
+.spec-list li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.spec-label {
+  font-weight: bold;
+  color: var(--so-neon-purple);
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.sub-spec-list {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-top: 6px;
+  color: var(--text-main);
+}
+
+.sub-spec-list li {
+  border-bottom: none;
+  margin-bottom: 4px;
+  padding-bottom: 0;
+}
+
+/* ---------------------------------------------------
+   2. 「本マニュアルについて」アコーディオン制御
+--------------------------------------------------- */
+.accordion-header {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text-bright);
+  font-size: 1.05rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  user-select: none;
+}
+
+.accordion-header-title {
+  color: var(--text-bright);
+  font-size: 1.05rem;
+}
+
+.accordion-icon {
+  font-size: 0.8rem;
+  color: var(--so-neon-purple);
+  transition: transform 0.3s ease;
+}
+
+.accordion-body {
+  display: none;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(192, 132, 252, 0.2);
+}
+
+/* アコーディオン開閉状態 */
+.accordion-section.is-open .accordion-body {
+  display: block;
+  animation: accordionFadeIn 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.accordion-section.is-open .accordion-icon {
+  transform: rotate(180deg);
+}
+
+@keyframes accordionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 本文・注意喚起ボックス */
+.about-text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+
+.caution-box {
+  background: rgba(255, 70, 126, 0.08);
+  border: 1px solid var(--so-shadow-border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-top: 12px;
+}
+
+.caution-title {
+  font-size: 0.88rem;
+  font-weight: bold;
+  color: #ff88a8;
+  margin-bottom: 8px;
+}
+
+.caution-desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-main);
+}
+
+.caution-desc strong {
+  color: #ffffff;
+}
+
+/* 閉じるボタン */
+.accordion-close-wrapper {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.accordion-close-btn {
+  background: rgba(192, 132, 252, 0.1);
+  border: 1px solid var(--card-border);
+  color: var(--so-neon-purple);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.accordion-close-btn:hover {
+  background: var(--so-neon-purple);
+  color: #0a0512;
+  box-shadow: 0 0 10px var(--so-neon-purple-glow);
+}
+
+/* ---------------------------------------------------
+   3. マニュアル目次カードグリッド（PC: 3列固定）
+--------------------------------------------------- */
+.index-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.index-card {
+  background: rgba(30, 16, 52, 0.8);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 18px;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+}
+
+.index-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--so-neon-purple);
+  box-shadow: 0 0 15px var(--so-neon-purple-glow);
+  background: rgba(45, 26, 75, 0.9);
+}
+
+.index-card-num {
+  font-size: 0.75rem;
+  color: var(--so-neon-purple);
+  font-weight: bold;
+}
+
+.index-card-title {
+  font-size: 1.1rem;
+  color: var(--text-bright);
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+.index-card-desc {
+  font-size: 0.82rem;
+  color: #a093b8;
+  line-height: 1.4;
+}
+
+.index-card-arrow {
+  align-self: flex-end;
+  font-size: 0.9rem;
+  color: var(--so-neon-purple);
+  margin-top: 10px;
+}
+
+/* ---------------------------------------------------
+   4. サイド・オーダー風UI（チップ・パレット＆心理機能）
+--------------------------------------------------- */
+.so-chip-card {
+  background: rgba(30, 16, 52, 0.85);
+  border: 2px solid var(--so-neon-purple);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 15px var(--so-neon-purple-glow);
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.so-chip-card::before {
+  content: "CHIP MODULE";
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  background: var(--so-neon-purple);
+  color: #0a0512;
+  font-size: 0.65rem;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.so-badge-warning {
+  display: inline-block;
+  background: rgba(255, 70, 126, 0.2);
+  border: 1px solid var(--so-shadow-border);
+  color: #ff88a8;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.so-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.so-list-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--so-neon-purple);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.so-list-item strong {
+  color: var(--text-bright);
+}
+
+/* 心理機能パレット（左右分割レイアウト） */
+.so-container {
+  position: relative;
+  padding: 10px 0;
+  min-height: 380px;
+}
+
+.so-layout-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.so-plate-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.so-plate {
+  background: rgba(25, 16, 42, 0.85);
+  border: 1.5px solid #8b5cf6;
+  border-radius: 10px 24px 10px 24px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.so-plate:hover, .so-plate.active {
+  transform: scale(1.02) translateX(4px);
+  border-color: #fff;
+  box-shadow: 0 0 12px rgba(192, 132, 252, 0.3);
+  background: rgba(45, 26, 75, 0.9);
+}
+
+.so-container.is-shadow .so-plate {
+  border-color: rgba(255, 70, 126, 0.5);
+}
+
+.so-container.is-shadow .so-plate:hover, 
+.so-container.is-shadow .so-plate.active {
+  box-shadow: 0 0 12px var(--so-shadow-glow);
+  border-color: var(--so-shadow-border);
+  background: rgba(60, 20, 45, 0.9);
+}
+
+.so-plate-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.so-plate-code {
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--so-neon-purple);
+}
+
+.so-container.is-shadow .so-plate-code {
+  color: var(--so-shadow-border);
+}
+
+.so-plate-name {
+  font-weight: bold;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* 詳細パネル（右側） */
+.so-detail-panel {
+  flex: 1.2;
+  background: rgba(18, 10, 33, 0.95);
+  border: 2px solid var(--so-neon-purple);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.so-container.is-shadow .so-detail-panel {
+  box-shadow: 0 0 15px var(--so-shadow-glow);
+  border-color: var(--so-shadow-border);
+}
+
+.so-chip-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  padding-bottom: 12px;
+}
+
+.so-chip-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #8b5cf6, #120a21);
+  border: 2px solid #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.so-container.is-shadow .so-chip-icon {
+  background: linear-gradient(135deg, var(--so-shadow-border), #120a21);
+}
+
+.so-chip-category {
+  font-size: 0.8rem;
+  color: var(--so-neon-purple);
+}
+
+.so-container.is-shadow .so-chip-category {
+  color: var(--so-shadow-border);
+}
+
+.so-chip-title {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* ステータスバー */
+.so-chip-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.so-status-label {
+  width: 50px;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.so-status-bar {
+  flex: 1;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.so-status-bar i {
+  display: block;
+  height: 100%;
+  background: var(--so-neon-purple);
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.so-container.is-shadow .so-status-bar i {
+  background: var(--so-shadow-border);
+}
+
+.so-status-val {
+  min-width: 140px;
+  text-align: right;
+  font-weight: bold;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.so-chip-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d8b4fe;
+}
+
+/* 表裏切替ボタン */
+.so-switch-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.so-switch-btn {
+  background: rgba(25, 16, 42, 0.85);
+  border: 2px solid var(--so-neon-purple);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
+  transition: all 0.2s;
+}
+
+.so-switch-btn:hover {
+  transform: scale(1.05);
+  background: var(--so-neon-purple);
+  color: #120a21;
+}
+
+.so-container.is-shadow .so-switch-btn {
+  border-color: var(--so-shadow-border);
+  box-shadow: 0 0 10px var(--so-shadow-glow);
+}
+
+.so-container.is-shadow .so-switch-btn:hover {
+  background: var(--so-shadow-border);
+  color: #120a21;
+}
+
+/* ---------------------------------------------------
+   5. スマホ・タブレット用レスポンシブ統合
+--------------------------------------------------- */
+@media (max-width: 900px) {
+  .index-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .so-layout-wrapper {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .index-grid {
+    grid-template-columns: 1fr;
+  }
+}

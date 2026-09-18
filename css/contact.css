@@ -1,0 +1,148 @@
+@charset "utf-8";
+/* ===================================================
+   top.css - トップページ（扉）専用スタイル
+   =================================================== */
+
+/* --- アコーディオンのスタイル --- */
+.accordion-header {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text-bright);
+  font-size: 1.05rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.accordion-icon {
+  color: var(--so-neon-purple);
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-body {
+  display: none;
+  padding-top: 16px;
+}
+
+.about-text {
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+/* 開いている状態（is-open クラス付与時） */
+.accordion-section.is-open .accordion-body {
+  display: block;
+}
+
+.accordion-section.is-open .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* --- 閉じるボタンのスタイル --- */
+.accordion-close-wrapper {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.accordion-close-btn {
+  background: rgba(192, 132, 252, 0.1);
+  border: 1px solid var(--card-border);
+  color: var(--so-neon-purple);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.accordion-close-btn:hover {
+  background: var(--so-neon-purple);
+  color: #0a0512;
+  box-shadow: 0 0 10px var(--so-neon-purple-glow);
+}
+
+/* MBTI注意喚起カード（警告カラー） */
+.caution-box {
+  background: rgba(255, 70, 126, 0.1);
+  border: 1px solid #ff467e;
+  border-radius: 10px;
+  padding: 18px;
+  margin-top: 12px;
+}
+
+.caution-title {
+  color: #ff467e;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.caution-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #f1d5e4;
+}
+
+/* マニュアル目次カードグリッド */
+.index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.index-card {
+  background: rgba(30, 16, 52, 0.8);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 18px;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.index-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--so-neon-purple);
+  box-shadow: 0 0 15px var(--so-neon-purple-glow);
+  background: rgba(45, 26, 75, 0.9);
+}
+
+.index-card-num {
+  font-size: 0.75rem;
+  color: var(--so-neon-purple);
+  font-weight: bold;
+}
+
+.index-card-title {
+  font-size: 1.1rem;
+  color: var(--text-bright);
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+.index-card-desc {
+  font-size: 0.82rem;
+  color: #a093b8;
+  line-height: 1.4;
+}
+
+.index-card-arrow {
+  align-self: flex-end;
+  font-size: 0.9rem;
+  color: var(--so-neon-purple);
+  margin-top: 10px;
+}

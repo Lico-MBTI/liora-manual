@@ -1,0 +1,510 @@
+@charset "utf-8";
+
+/* ===================================================
+   common.css - 全ページ共通スタイル
+   =================================================== */
+
+/* ---------------------------------------------------
+   1. 変数定義 (:root)
+--------------------------------------------------- */
+:root {
+  --bg-main: #0a0512;
+  --bg-card: rgba(22, 12, 38, 0.85);
+  --text-main: #e2d9f3;
+  --text-bright: #ffffff;
+  --so-neon-purple: #c084fc;
+  --so-neon-purple-glow: rgba(192, 132, 252, 0.4);
+  --so-shadow-border: #ff467e;
+  --so-shadow-glow: rgba(255, 70, 126, 0.3);
+  --card-border: rgba(192, 132, 252, 0.3);
+  --sidebar-width: 270px;
+}
+
+/* ---------------------------------------------------
+   2. 全体リセット & リベース
+--------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", MeiRyo, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2カラム レイアウト外枠 */
+.app-container {
+  display: flex;
+  flex: 1;
+}
+
+/* ---------------------------------------------------
+   3. モバイル用ヘッダー（初期状態：PC非表示）
+--------------------------------------------------- */
+.mobile-header {
+  display: none;
+  background-color: #120724;
+  border-bottom: 1px solid var(--card-border);
+  padding: 12px 16px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px; /* ボタンとタイトルの間の余白 */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.mobile-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-bright);
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  color: var(--so-neon-purple);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1; /* 高さのズレを防ぐ */
+}
+
+/* ---------------------------------------------------
+   4. 左サイドバー（プロフィール・目次・リンク）
+--------------------------------------------------- */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: #120724;
+  border-right: 1px solid var(--card-border);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+/* プロフィールカード */
+.profile-card {
+  text-align: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--so-neon-purple);
+  box-shadow: 0 0 12px var(--so-neon-purple-glow);
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 1.1rem;
+  color: var(--text-bright);
+  font-weight: bold;
+}
+
+.profile-type {
+  font-size: 0.8rem;
+  color: var(--so-neon-purple);
+  font-weight: bold;
+}
+
+/* ナビゲーションメニュー */
+.nav-section-title {
+  font-size: 0.75rem;
+  color: #8a7aab;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 8px 12px;
+  color: var(--text-main);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.nav-menu a:hover {
+  background-color: rgba(192, 132, 252, 0.15);
+  border-color: var(--card-border);
+  color: var(--text-bright);
+}
+
+.nav-menu a.active {
+  background-color: var(--so-neon-purple);
+  color: #0a0512;
+  font-weight: bold;
+  border-color: var(--so-neon-purple);
+  box-shadow: 0 0 10px var(--so-neon-purple-glow);
+}
+
+/* 外部リンクボタン（YouTube / Contact） */
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ext-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.ext-btn.youtube {
+  background-color: rgba(255, 0, 0, 0.2);
+  border: 1px solid #ff4444;
+  color: #ff8888;
+}
+
+.ext-btn.youtube:hover {
+  background-color: #ff0000;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.ext-btn.contact {
+  background-color: rgba(192, 132, 252, 0.15);
+  border: 1px solid var(--so-neon-purple);
+  color: var(--so-neon-purple);
+}
+
+.ext-btn.contact:hover {
+  background-color: var(--so-neon-purple);
+  color: #0a0512;
+}
+
+/* ---------------------------------------------------
+   5. 右メインコンテンツ外枠
+--------------------------------------------------- */
+.main-content {
+  flex: 1;
+  padding: 32px 24px;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.page-header {
+  border-bottom: 2px solid var(--so-neon-purple);
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+.page-title {
+  font-size: 1.6rem;
+  color: var(--text-bright);
+  letter-spacing: 0.05em;
+}
+
+.page-subtitle {
+  font-size: 0.85rem;
+  color: #a093b8;
+  margin-top: 4px;
+}
+
+/* ---------------------------------------------------
+   6. 共通セクションカード枠
+--------------------------------------------------- */
+.manual-section {
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.manual-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--so-neon-purple);
+}
+
+.section-title {
+  font-size: 1.2rem;
+  color: var(--text-bright);
+  margin-bottom: 16px;
+}
+
+/* ---------------------------------------------------
+   7. フッター
+--------------------------------------------------- */
+.main-footer {
+  margin-top: auto;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.75rem;
+  color: #7a6e91;
+}
+
+/* ===================================================
+   スマホ対応：全画面モーダル＆「✕」閉じるボタン確定版
+   =================================================== */
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+  }
+
+  .app-container {
+    flex-direction: column;
+  }
+
+  /* 全画面モーダル表示 */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 5, 18, 0.98);
+    backdrop-filter: blur(12px);
+    z-index: 9999; /* 最前面に配置 */
+    padding: 70px 24px 32px 24px; /* 上部に✕ボタン領域をしっかり確保 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .sidebar.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    left: 0;
+  }
+
+/* 左上「✕」閉じるボタン（枠なし・文字のみ） */
+  .sidebar-close-btn {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: none;             /* 背景色を消去 */
+    border: none;                 /* 枠線を消去 */
+    color: var(--so-neon-purple); /* 発光ネオンパープル */
+    font-size: 1.8rem;            /* スッキリ見えつつタップしやすいサイズ */
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 8px;
+    z-index: 10000;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .sidebar-close-btn:active {
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
+  /* ナビゲーションリンク */
+  .nav-menu {
+    gap: 10px;
+  }
+
+  .nav-menu a {
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: rgba(30, 16, 52, 0.8);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-menu a.active {
+    box-shadow: 0 0 15px var(--so-neon-purple-glow);
+  }
+
+  .main-content {
+    padding: 16px;
+  }
+}
+
+/* PC表示時は「✕」ボタンを隠す */
+@media (min-width: 769px) {
+  .sidebar-close-btn {
+    display: none;
+  }
+}
+
+/* ===================================================
+   最下部：ナビゲーションボタン（左右配置・レスポンシブ対応）
+   =================================================== */
+.page-nav-container {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between; /* 左右に振り分け */
+  align-items: center;
+  gap: 12px;
+}
+
+/* 共通ボタン基本スタイル */
+.nav-page-btn {
+  display: inline-flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.15), rgba(18, 10, 33, 0.9));
+  border: 1.5px solid var(--so-neon-purple);
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-decoration: none;
+  box-shadow: 0 0 10px var(--so-neon-purple-glow);
+  transition: all 0.25s ease;
+  min-width: 140px;
+  flex: 1; /* スマホ時に左右均等に引き伸ばす */
+  max-width: 260px;
+}
+
+.nav-page-btn:hover,
+.nav-page-btn:active {
+  background: var(--so-neon-purple);
+  box-shadow: 0 0 16px rgba(192, 132, 252, 0.6);
+}
+
+.nav-page-btn:hover .nav-btn-label,
+.nav-page-btn:active .nav-btn-label,
+.nav-page-btn:hover .nav-btn-title,
+.nav-page-btn:active .nav-btn-title {
+  color: #0a0512;
+}
+
+/* 左ボタン（PREV）専用配置 */
+.nav-page-btn.prev {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.nav-page-btn.prev:hover,
+.nav-page-btn.prev:active {
+  transform: translateX(-4px); /* 左へ軽くスライド */
+}
+
+/* 右ボタン（NEXT）専用配置 */
+.nav-page-btn.next {
+  text-align: right;
+  align-items: flex-end;
+  margin-left: auto; /* 左ボタンがない場合も右寄せ固定 */
+}
+
+.nav-page-btn.next:hover,
+.nav-page-btn.next:active {
+  transform: translateX(4px); /* 右へ軽くスライド */
+}
+
+.nav-btn-label {
+  font-size: 0.65rem;
+  font-weight: bold;
+  color: var(--so-neon-purple);
+  letter-spacing: 0.1em;
+}
+
+.nav-btn-title {
+  font-size: 0.88rem;
+  font-weight: bold;
+  color: var(--text-bright);
+  margin-top: 2px;
+}
+
+/* スマホ時：文字サイズと余白を微調整 */
+@media (max-width: 600px) {
+  .nav-page-btn {
+    padding: 8px 10px;
+    min-width: auto;
+  }
+  .nav-btn-title {
+    font-size: 0.8rem;
+  }
+}
+
+/* ===================================================
+   最下部：NEXT SECTIONボタン（右寄せ・コンパクト枠版）
+   =================================================== */
+.next-btn-wrapper {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: flex-end; /* 右寄せ */
+}
+
+.next-page-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.2), rgba(18, 10, 33, 0.9));
+  border: 1.5px solid var(--so-neon-purple);
+  border-radius: 10px;
+  padding: 10px 16px;
+  text-decoration: none;
+  box-shadow: 0 0 10px var(--so-neon-purple-glow);
+  transition: all 0.25s ease;
+  text-align: right;
+  min-width: 200px;
+}
+
+.next-page-btn:hover, 
+.next-page-btn:active {
+  transform: translateX(4px);
+  background: var(--so-neon-purple);
+  box-shadow: 0 0 16px rgba(192, 132, 252, 0.6);
+}
+
+.next-page-btn:hover .next-label,
+.next-page-btn:active .next-label,
+.next-page-btn:hover .next-title,
+.next-page-btn:active .next-title {
+  color: #0a0512;
+}
+
+.next-label {
+  font-size: 0.65rem;
+  font-weight: bold;
+  color: var(--so-neon-purple);
+  letter-spacing: 0.1em;
+}
+
+.next-title {
+  font-size: 0.92rem;
+  font-weight: bold;
+  color: var(--text-bright);
+  margin-top: 2px;
+}

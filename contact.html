@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リオラ（ENTP）取扱説明書 - お問い合わせ</title>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+  <!-- スマホ用固定ヘッダー -->
+  <header class="mobile-header">
+    <button class="hamburger-btn" id="hamburgerBtn">☰</button>
+    <span class="mobile-title">LIORA MANUAL</span>
+  </header>
+
+  <div class="app-container">
+	<!-- 左サイドバー -->
+    <aside class="sidebar" id="sidebar">
+      <button type="button" class="sidebar-close-btn" id="sidebarCloseBtn">✕</button>
+      <div class="profile-card">
+        <img src="images/liora.jpg" alt="リオラ アイコン" class="profile-icon" onerror="this.src='https://via.placeholder.com/80/120724/c084fc?text=RIORA'">
+        <div class="profile-name">リオラ</div>
+        <div class="profile-type">ENTP / 討論者型</div>
+      </div>
+
+      <nav>
+        <div class="nav-section-title">CONTENTS INDEX</div>
+        <ul class="nav-menu">
+          <li><a href="index.html">🏠 TOP（はじめに）</a></li>
+          <li><a href="specs.html">1. 基本仕様</a></li>
+          <li><a href="functions.html">2. システム構造</a></li>
+          <li><a href="usage.html">3. 推奨取り扱い方法</a></li>
+          <li><a href="warning.html">4. ⚠️ 禁止事項</a></li>
+          <li><a href="troubleshooting.html">5. トラブルシューティング</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-links">
+        <div class="nav-section-title">OFFICIAL LINKS</div>
+        <a href="https://www.youtube.com/@%E3%83%AA%E3%82%AA%E3%83%A9" target="_blank" rel="noopener" class="ext-btn youtube">
+          <span>▶ YouTube Channel</span>
+        </a>
+        <a href="contact.html" class="ext-btn contact active">
+          <span>✉ お問い合わせ</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- 右メインコンテンツエリア -->
+    <main class="main-content">
+      <header class="page-header">
+        <h1 class="page-title">✉ 管理人へのお問い合わせ</h1>
+        <p class="page-subtitle">CONTACT & FEEDBACK FORM</p>
+      </header>
+
+      <section class="so-chip-card">
+        <p style="margin-bottom: 20px; font-size: 0.92rem; line-height: 1.6;">
+          当サイト（リオラさん取扱説明書）に関するご意見、ご感想、分析のリクエストや誤字脱字のご指摘などがございましたら、以下のフォームよりお気軽にご連絡ください。
+        </p>
+
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('メッセージが送信されました。');">
+          <div class="form-group">
+            <label class="form-label" for="name">
+              お名前 / ニックネーム <span class="required">必須</span>
+            </label>
+            <input type="text" id="name" class="form-input" placeholder="例：スプラ好きのリスナー" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">
+              メールアドレス <span style="font-size: 0.75rem; color: #a093b8; font-weight: normal;">(任意)</span>
+            </label>
+            <input type="email" id="email" class="form-input" placeholder="example@mail.com">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">
+              お問い合わせ内容・ご感想 <span class="required">必須</span>
+            </label>
+            <textarea id="message" class="form-textarea" rows="6" placeholder="サイトの感想や分析のご要望などをご記入ください" required></textarea>
+          </div>
+
+          <button type="submit" class="form-submit-btn">
+            <span>✉ メッセージを送信する</span>
+          </button>
+        </form>
+      </section>
+
+<!-- 次の章へ進むボタン（右寄せ・ネオン枠） -->
+<div class="next-btn-wrapper">
+  <a href="index.html" class="next-page-btn">
+    <div class="next-label">RETURN TO TOP</div>
+    <div class="next-title">🏠 TOP（はじめに）へ戻る ➔</div>
+  </a>
+</div>
+		
+      <footer class="main-footer">
+        <p>© Fanmade Operating Manual / リオラ (ENTP) 非公式ファン分析サイト</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="js/common.js"></script>
+</body>
+</html>

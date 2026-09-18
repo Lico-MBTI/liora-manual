@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リオラ（ENTP）取扱説明書 - システム構造</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/top.css">
+</head>
+<body>
+
+  <!-- スマホ用固定ヘッダー -->
+  <header class="mobile-header">
+    <button class="hamburger-btn" id="hamburgerBtn">☰</button>
+    <span class="mobile-title">LIORA MANUAL</span>
+  </header>
+
+  <div class="app-container">
+	<!-- 左サイドバー -->
+    <aside class="sidebar" id="sidebar">
+      <button type="button" class="sidebar-close-btn" id="sidebarCloseBtn">✕</button>
+      <div class="profile-card">
+        <img src="images/liora.jpg" alt="リオラ アイコン" class="profile-icon" onerror="this.src='https://via.placeholder.com/80/120724/c084fc?text=RIORA'">
+        <div class="profile-name">リオラ</div>
+        <div class="profile-type">ENTP / 討論者型</div>
+      </div>
+
+      <nav>
+        <div class="nav-section-title">CONTENTS INDEX</div>
+        <ul class="nav-menu">
+          <li><a href="index.html">🏠 TOP（はじめに）</a></li>
+          <li><a href="specs.html">1. 基本仕様</a></li>
+          <li><a href="functions.html" class="active">2. システム構造</a></li>
+          <li><a href="usage.html">3. 推奨取り扱い方法</a></li>
+          <li><a href="warning.html">4. ⚠️ 禁止事項</a></li>
+          <li><a href="troubleshooting.html">5. トラブルシューティング</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-links">
+        <div class="nav-section-title">OFFICIAL LINKS</div>
+        <a href="https://www.youtube.com/@%E3%83%AA%E3%82%AA%E3%83%A9" target="_blank" rel="noopener" class="ext-btn youtube">
+          <span>▶ YouTube Channel</span>
+        </a>
+        <a href="contact.html" class="ext-btn contact">
+          <span>✉ お問い合わせ</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- 右メインコンテンツエリア -->
+    <main class="main-content">
+      <header class="page-header">
+        <h1 class="page-title">2. システム構造（8つの心理機能）</h1>
+        <p class="page-subtitle">COLOR CHIP PALETTE SELECTOR</p>
+      </header>
+
+      <!-- サイド・オーダー風UI（単体セクション枠） -->
+      <section class="manual-section side-order-theme">
+        <div class="so-container" id="soContainer">
+          <div class="so-layout-wrapper" id="soWrapper">
+            
+            <!-- 【プレート一覧エリア（左）】 -->
+            <div class="so-plate-list" id="soPlateList"></div>
+
+            <!-- 【詳細解説パネルエリア（右）】 -->
+            <div class="so-detail-panel" id="soDetailPanel">
+              <div class="so-chip-header">
+                <div class="so-chip-icon" id="soChipIcon">Ne</div>
+                <div>
+                  <div class="so-chip-category" id="soChipCategory">主機能 / 意識</div>
+                  <h3 class="so-chip-title" id="soChipTitle">外向的直観</h3>
+                </div>
+              </div>
+              <div class="so-chip-body">
+                <div class="so-chip-status">
+                  <span class="so-status-label">熟練度</span>
+                  <span class="so-status-bar"><i style="width: 100%;"></i></span>
+                  <span class="so-status-val">Lv.MAX（完全掌握）</span>
+                </div>
+                <p class="so-chip-desc" id="soChipDesc">
+                  会話の端々から無限のネタや可能性を打ち上げるメインエンジン。予測不能でスピーディーなトーク展開の源泉。
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 右下に配置される切替ボタン -->
+          <div class="so-switch-container">
+            <button class="so-switch-btn" id="soSwitchBtn">
+              <span class="so-btn-icon">👾</span>
+              <span class="so-btn-text" id="soBtnText">裏スペック ➔</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+	<!-- 次の章へ進むボタン（右寄せ・コンパクトグラデーション枠） -->
+      <div class="next-btn-wrapper">
+        <a href="usage.html" class="next-page-btn">
+          <div class="next-label">NEXT SECTION</div>
+          <div class="next-title">3. 推奨取扱方法へ進む ➔</div>
+        </a>
+      </div>
+
+      <footer class="main-footer">
+        <p>© Fanmade Operating Manual / リオラ (ENTP) 非公式ファン分析サイト</p>
+      </footer>
+		
+    </main>
+  </div>
+
+<script src="js/common.js"></script>
+  <script src="js/functions.js"></script>
+</body>
+</html>
