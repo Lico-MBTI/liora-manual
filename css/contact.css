@@ -1,148 +1,179 @@
 @charset "utf-8";
+
 /* ===================================================
-   top.css - トップページ（扉）専用スタイル
+   contact.css - お問い合わせ専用スタイル（プレート形状同調版）
    =================================================== */
 
-/* --- アコーディオンのスタイル --- */
-.accordion-header {
-  width: 100%;
-  background: none;
-  border: none;
-  color: var(--text-bright);
-  font-size: 1.05rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  padding: 0;
-  text-align: left;
-}
-
-.accordion-icon {
-  color: var(--so-neon-purple);
-  font-size: 0.8rem;
-  transition: transform 0.3s ease;
-}
-
-.accordion-body {
-  display: none;
-  padding-top: 16px;
-}
-
-.about-text {
-  line-height: 1.6;
-  font-size: 0.9rem;
-}
-
-/* 開いている状態（is-open クラス付与時） */
-.accordion-section.is-open .accordion-body {
-  display: block;
-}
-
-.accordion-section.is-open .accordion-icon {
-  transform: rotate(180deg);
-}
-
-/* --- 閉じるボタンのスタイル --- */
-.accordion-close-wrapper {
-  margin-top: 16px;
-  text-align: center;
-}
-
-.accordion-close-btn {
-  background: rgba(192, 132, 252, 0.1);
-  border: 1px solid var(--card-border);
-  color: var(--so-neon-purple);
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-size: 0.82rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.accordion-close-btn:hover {
-  background: var(--so-neon-purple);
-  color: #0a0512;
-  box-shadow: 0 0 10px var(--so-neon-purple-glow);
-}
-
-/* MBTI注意喚起カード（警告カラー） */
-.caution-box {
-  background: rgba(255, 70, 126, 0.1);
-  border: 1px solid #ff467e;
-  border-radius: 10px;
-  padding: 18px;
-  margin-top: 12px;
-}
-
-.caution-title {
-  color: #ff467e;
-  font-weight: bold;
-  font-size: 1rem;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.caution-desc {
-  font-size: 0.88rem;
-  line-height: 1.6;
-  color: #f1d5e4;
-}
-
-/* マニュアル目次カードグリッド */
-.index-grid {
+/* 1. グリッド配置（PC: 2列） */
+.ct-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   margin-top: 12px;
 }
 
-.index-card {
-  background: rgba(30, 16, 52, 0.8);
-  border: 1px solid var(--card-border);
-  border-radius: 10px;
+/* 2. カード本体ベーススタイル（システム構造プレート角丸同調） */
+.ct-card {
+  background: rgba(25, 16, 42, 0.85);
+  border: 1.5px solid var(--card-border);
+  border-radius: 10px 24px 10px 24px; /* ★ 右上・左下が丸い対角シェイプ */
   padding: 18px;
   text-decoration: none;
   color: var(--text-main);
-  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 180px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.15);
 }
 
-.index-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--so-neon-purple);
-  box-shadow: 0 0 15px var(--so-neon-purple-glow);
+/* ホバー時の共通挙動（右へ少し動いて発光） */
+.ct-card:hover {
+  transform: scale(1.02) translateX(4px);
   background: rgba(45, 26, 75, 0.9);
 }
 
-.index-card-num {
+/* 3. カード内部テキスト */
+.ct-card-num {
   font-size: 0.75rem;
-  color: var(--so-neon-purple);
   font-weight: bold;
 }
 
-.index-card-title {
+.ct-card-title {
   font-size: 1.1rem;
   color: var(--text-bright);
   font-weight: bold;
   margin: 6px 0;
 }
 
-.index-card-desc {
+.ct-card-desc {
   font-size: 0.82rem;
   color: #a093b8;
   line-height: 1.4;
 }
 
-.index-card-arrow {
+.ct-card-arrow {
   align-self: flex-end;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  font-weight: bold;
+  margin-top: 12px;
+  transition: transform 0.2s ease;
+}
+
+.ct-card:hover .ct-card-arrow {
+  transform: translateX(4px);
+}
+
+/* 4. 各ブランド別ホバー＆発光カラー */
+
+/* X (旧Twitter) カード */
+.ct-card.x-card .ct-card-num,
+.ct-card.x-card .ct-card-arrow {
+  color: #1d9bf0;
+}
+
+.ct-card.x-card:hover {
+  border-color: #1d9bf0;
+  box-shadow: 0 0 15px rgba(29, 155, 240, 0.4);
+}
+
+/* ココナラ カード */
+.ct-card.coconala-card .ct-card-num,
+.ct-card.coconala-card .ct-card-arrow {
+  color: #2ecc71;
+}
+
+.ct-card.coconala-card:hover {
+  border-color: #2ecc71;
+  box-shadow: 0 0 15px rgba(46, 204, 113, 0.4);
+}
+
+/* ===================================================
+   完全匿名メッセージBOX（枠なし・フルサイズ版）
+   =================================================== */
+.ct-anon-box {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px dashed rgba(192, 132, 252, 0.3); /* 上部に控えめな区切り線 */
+  width: 100%;
+  text-align: left;
+}
+
+.ct-anon-box .section-title {
+  margin-bottom: 12px;
+}
+
+.ct-anon-desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+
+.ct-anon-sub {
+  display: block;
+  font-size: 0.78rem;
+  color: #a093b8;
+  margin-top: 6px;
+}
+
+/* 匿名メッセージ送信ボタン */
+.ct-anon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;        /* 中身の文字に合わせてボタン幅を自動決定 */
+  margin: 20px auto 0 auto;  /* 左右の margin を auto にして真ん中に配置 */
+  background: rgba(192, 132, 252, 0.15);
+  border: 1px solid var(--so-neon-purple);
   color: var(--so-neon-purple);
-  margin-top: 10px;
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 10px var(--so-neon-purple-glow);
+}
+
+.ct-anon-btn:hover {
+  background: var(--so-neon-purple);
+  color: #0a0512;
+  box-shadow: 0 0 16px rgba(192, 132, 252, 0.6);
+  transform: translateY(-2px);
+}
+
+/* 5. スマホ対応（768px以下で1列化＆コンパクト表示） */
+@media (max-width: 768px) {
+  .ct-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ct-card {
+    padding: 12px 14px;
+    min-height: 140px;
+    border-radius: 8px 16px 8px 16px; /* ★ スマホ用最適化角丸 */
+  }
+
+  .ct-card-num {
+    font-size: 0.68rem;
+  }
+
+  .ct-card-title {
+    font-size: 0.98rem;
+    margin: 4px 0;
+  }
+
+  .ct-card-desc {
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
+
+  .ct-card-arrow {
+    font-size: 0.8rem;
+    margin-top: 8px;
+  }
 }

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>リオラ（ENTP）取扱説明書 - お問い合わせ</title>
   <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
 
@@ -15,11 +16,16 @@
   </header>
 
   <div class="app-container">
-	<!-- 左サイドバー -->
+    <!-- 左サイドバー -->
     <aside class="sidebar" id="sidebar">
       <button type="button" class="sidebar-close-btn" id="sidebarCloseBtn">✕</button>
+
+      <!-- プロフィールカード -->
       <div class="profile-card">
-        <img src="images/liora.jpg" alt="リオラ アイコン" class="profile-icon" onerror="this.src='https://via.placeholder.com/80/120724/c084fc?text=RIORA'">
+        <div class="profile-icon-wrapper" id="profileCardBtn" role="button" tabindex="0" title="リオラ Official Linksを開く">
+          <img src="images/liora.jpg" alt="リオラ アイコン" class="profile-icon" onerror="this.src='https://via.placeholder.com/80/120724/c084fc?text=RIORA'">
+          <span class="profile-link-badge">🔗 LINKS</span>
+        </div>
         <div class="profile-name">リオラ</div>
         <div class="profile-type">ENTP / 討論者型</div>
       </div>
@@ -33,12 +39,13 @@
           <li><a href="usage.html">3. 推奨取り扱い方法</a></li>
           <li><a href="warning.html">4. ⚠️ 禁止事項</a></li>
           <li><a href="troubleshooting.html">5. トラブルシューティング</a></li>
+          <li><a href="members.html">6. 他モデル仕様書</a></li>
         </ul>
       </nav>
 
       <div class="sidebar-links">
         <div class="nav-section-title">OFFICIAL LINKS</div>
-        <a href="https://www.youtube.com/@%E3%83%AA%E3%82%AA%E3%83%A9" target="_blank" rel="noopener" class="ext-btn youtube">
+        <a href="https://www.youtube.com/@liora1219" target="_blank" rel="noopener" class="ext-btn youtube">
           <span>▶ YouTube Channel</span>
         </a>
         <a href="contact.html" class="ext-btn contact active">
@@ -50,55 +57,165 @@
     <!-- 右メインコンテンツエリア -->
     <main class="main-content">
       <header class="page-header">
-        <h1 class="page-title">✉ 管理人へのお問い合わせ</h1>
-        <p class="page-subtitle">CONTACT & FEEDBACK FORM</p>
+        <h1 class="page-title">✉ お問い合わせ（CONTACT）</h1>
+        <p class="page-subtitle">FEEDBACK & INQUIRIES</p>
       </header>
 
-      <section class="so-chip-card">
-        <p style="margin-bottom: 20px; font-size: 0.92rem; line-height: 1.6;">
-          当サイト（リオラさん取扱説明書）に関するご意見、ご感想、分析のリクエストや誤字脱字のご指摘などがございましたら、以下のフォームよりお気軽にご連絡ください。
-        </p>
+	<!-- SECTION 1: 外部お問い合わせ窓口（アコーディオン） -->
+      <section class="manual-section accordion-section">
+        <button class="accordion-header" type="button">
+          <span class="accordion-header-title">1. 外部お問い合わせ窓口</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-body">
+          <p style="margin-bottom: 16px; font-size: 0.88rem; line-height: 1.6; color: var(--text-main);">
+            当サイト（リオラ取扱説明書）へのご感想、分析のリクエスト、誤字脱字のご指摘や各種ご相談は、以下の窓口よりご連絡ください。
+          </p>
 
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('メッセージが送信されました。');">
-          <div class="form-group">
-            <label class="form-label" for="name">
-              お名前 / ニックネーム <span class="required">必須</span>
-            </label>
-            <input type="text" id="name" class="form-input" placeholder="例：スプラ好きのリスナー" required>
+          <!-- お問い合わせ専用グリッド -->
+          <div class="ct-grid">
+            
+            <!-- CARD 1: X (旧Twitter) DM -->
+            <a href="https://x.com/ricopinchannel" target="_blank" rel="noopener" class="ct-card x-card">
+              <div>
+                <div class="ct-card-num">RECOMMENDED / 推奨窓口</div>
+                <div class="ct-card-title">X（旧Twitter）DM</div>
+                <div class="ct-card-desc">
+                  サイトの感想・分析リクエスト・不具合報告など、最も迅速に対応可能です。お気軽にDMをお送りください！
+                </div>
+              </div>
+              <div class="ct-card-arrow"> X の DM で連絡する ➔</div>
+            </a>
+
+            <!-- CARD 2: ココナラ -->
+            <a href="https://coconala.com/users/6213880" target="_blank" rel="noopener" class="ct-card coconala-card">
+              <div>
+                <div class="ct-card-num">OFFICIAL / 外部決済対応</div>
+                <div class="ct-card-title">ココナラ（coconala）</div>
+                <div class="ct-card-desc">
+                  Webデザインやフロントエンド制作など、プラットフォームを通した安全なお取引をご希望の方はこちらからどうぞ。
+                </div>
+              </div>
+              <div class="ct-card-arrow"> ココナラで相談する ➔</div>
+            </a>
           </div>
-
-          <div class="form-group">
-            <label class="form-label" for="email">
-              メールアドレス <span style="font-size: 0.75rem; color: #a093b8; font-weight: normal;">(任意)</span>
-            </label>
-            <input type="email" id="email" class="form-input" placeholder="example@mail.com">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="message">
-              お問い合わせ内容・ご感想 <span class="required">必須</span>
-            </label>
-            <textarea id="message" class="form-textarea" rows="6" placeholder="サイトの感想や分析のご要望などをご記入ください" required></textarea>
-          </div>
-
-          <button type="submit" class="form-submit-btn">
-            <span>✉ メッセージを送信する</span>
-          </button>
-        </form>
+        </div>
       </section>
 
-<!-- 次の章へ進むボタン（右寄せ・ネオン枠） -->
-<div class="next-btn-wrapper">
-  <a href="index.html" class="next-page-btn">
-    <div class="next-label">RETURN TO TOP</div>
-    <div class="next-title">🏠 TOP（はじめに）へ戻る ➔</div>
-  </a>
-</div>
-		
+	<!-- SECTION 2: 完全匿名メッセージBOX（アコーディオン） -->
+      <section class="manual-section accordion-section">
+        <button class="accordion-header" type="button">
+          <span class="accordion-header-title">2. 完全匿名メッセージBOX</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-body">
+          <p class="ct-anon-desc">
+            ログイン不要で感想や分析リクエストを送っていただけます。<br>
+            フォーム内の<strong class="hl-marker">「掲載同意」にチェックをいただいたメッセージ</strong>は、X（旧Twitter）や各種発信にて取り上げ・回答させていただく場合があります。<br>
+            <span class="ct-anon-sub">※個別返信が必要なご質問・ご依頼は、上部の X（DM）またはココナラをご利用ください。
+          </p>
+          
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSckNebyzci6kz1ZezvyA4XweWRjR2HAcpwdhDa7HTuxARvlVw/viewform?usp=dialog" target="_blank" rel="noopener" class="ct-anon-btn">
+            ✉ 匿名でメッセージ・リクエストを送る ➔
+          </a>
+        </div>
+      </section>
+
+      <!-- 左右ページ移動ナビゲーション -->
+      <div class="page-nav-container">
+        <a href="members.html" class="nav-page-btn prev">
+          <span class="nav-btn-label">← PREV SECTION</span>
+          <span class="nav-btn-title">6. 他モデル仕様書</span>
+        </a>
+
+        <a href="index.html" class="nav-page-btn next">
+          <span class="nav-btn-label">RETURN TO TOP →</span>
+          <span class="nav-btn-title"> TOP（はじめに）</span>
+        </a>
+      </div>
+
       <footer class="main-footer">
         <p>© Fanmade Operating Manual / リオラ (ENTP) 非公式ファン分析サイト</p>
       </footer>
     </main>
+  </div>
+
+  <!-- リオラ Official Links モーダル -->
+  <div class="so-modal-overlay" id="lioraModalOverlay" aria-hidden="true">
+    <div class="so-modal-content">
+      <button class="so-modal-close" id="lioraModalCloseBtn" type="button">✕</button>
+      
+      <div class="so-modal-header">
+        <img src="images/liora.jpg" alt="リオラ" class="so-modal-icon" onerror="this.src='https://via.placeholder.com/80/120724/c084fc?text=RIORA'">
+        <div>
+          <div class="so-modal-subtitle">ENTP / 討論者型</div>
+          <h2 class="so-modal-title">リオラ Official Links</h2>
+        </div>
+      </div>
+
+      <div class="so-modal-body">
+        <p class="so-modal-desc">リオラさんの各公式プラットフォーム・SNS一覧です。</p>
+        <div class="so-modal-links">
+          <div class="modal-group">
+            <div class="modal-group-title">▶ YOUTUBE CHANNELS</div>
+            <a href="https://www.youtube.com/channel/UCZLeZXjm_opUQFhLa4I_VFg" target="_blank" rel="noopener" class="so-modal-link-btn youtube">
+              <span class="link-marker">▪</span>
+              <span class="link-text">リオラch-スプラ解説-</span>
+              <span class="link-arrow">➔</span>
+            </a>
+            <a href="https://www.youtube.com/@%E3%83%AA%E3%82%AA%E3%83%A9%E3%81%AE%E9%81%8A%E3%81%B3%E5%A0%B4" target="_blank" rel="noopener" class="so-modal-link-btn youtube">
+              <span class="link-marker">▪</span>
+              <span class="link-text">リオラの遊び場</span>
+              <span class="link-arrow">➔</span>
+            </a>
+            <a href="https://www.youtube.com/channel/UCxatBdEPbu0eMBJYC5KGaqA" target="_blank" rel="noopener" class="so-modal-link-btn youtube">
+              <span class="link-marker">▪</span>
+              <span class="link-text">リオラのスプラ教室</span>
+              <span class="link-arrow">➔</span>
+            </a>
+            <a href="https://www.youtube.com/@vtuber1219" target="_blank" rel="noopener" class="so-modal-link-btn youtube">
+              <span class="link-marker">▪</span>
+              <span class="link-text">リオラ-Vtuberの先生</span>
+              <span class="link-arrow">➔</span>
+            </a>
+            <a href="https://www.youtube.com/@liora2001/videos" target="_blank" rel="noopener" class="so-modal-link-btn youtube">
+              <span class="link-marker">▪</span>
+              <span class="link-text">自由なリオラ</span>
+              <span class="link-arrow">➔</span>
+            </a>
+          </div>
+
+          <div class="modal-group">
+            <div class="modal-group-title">𝕏 X (TWITTER) ACCOUNTS</div>
+            <a href="https://x.com/liora1219" target="_blank" rel="noopener" class="so-modal-link-btn x-twitter">
+              <span class="link-marker">▪</span>
+              <span class="link-text">リオラch👻</span>
+              <span class="link-arrow">➔</span>
+            </a>
+            <a href="https://x.com/Li0ra__" target="_blank" rel="noopener" class="so-modal-link-btn x-twitter">
+              <span class="link-marker">▪</span>
+              <span class="link-text">りおらぴっぴ</span>
+              <span class="link-arrow">➔</span>
+            </a>
+            <a href="https://x.com/liora33333" target="_blank" rel="noopener" class="so-modal-link-btn x-twitter">
+              <span class="link-marker">▪</span>
+              <span class="link-text">リオラさぶさぶ</span>
+              <span class="link-arrow">➔</span>
+            </a>
+            <a href="https://x.com/Renren3353" target="_blank" rel="noopener" class="so-modal-link-btn x-twitter">
+              <span class="link-marker">▪</span>
+              <span class="link-text">リオラ@本垢登録者30万人</span>
+              <span class="link-arrow">➔</span>
+            </a>
+            <a href="https://x.com/liorach" target="_blank" rel="noopener" class="so-modal-link-btn x-twitter">
+              <span class="link-marker">▪</span>
+              <span class="link-text">リオラ@ポーカー</span>
+              <span class="link-arrow">➔</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="js/common.js"></script>

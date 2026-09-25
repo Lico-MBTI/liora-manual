@@ -1,5 +1,5 @@
 /* ===================================================
-   common.js - 共通JavaScript（ハンバーガー・メニュー・アコーディオン統合版）
+   common.js - 共通JavaScript（ハンバーガー・モーダル・アコーディオン統合版）
    =================================================== */
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -44,17 +44,47 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------------------------------------------------
-     2. ナビゲーション active クラス自動判定
+     2. リオラ Official Links モーダル開閉制御
   --------------------------------------------------- */
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPath) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
+  const profileCardBtn = document.getElementById('profileCardBtn');
+  const modalOverlay = document.getElementById('lioraModalOverlay');
+  const modalCloseBtn = document.getElementById('lioraModalCloseBtn');
+
+  if (profileCardBtn && modalOverlay) {
+    // モーダルを開く処理
+    profileCardBtn.addEventListener('click', () => {
+      // スマホのハンバーガーメニューが開いている場合は閉じる
+      if (sidebar) {
+        sidebar.classList.remove('active');
+      }
+      modalOverlay.classList.add('is-open');
+      modalOverlay.setAttribute('aria-hidden', 'false');
+    });
+
+    // 閉じる（✕ボタン）
+    if (modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', () => {
+        modalOverlay.classList.remove('is-open');
+        modalOverlay.setAttribute('aria-hidden', 'true');
+      });
     }
-  });
+
+    // 閉じる（背景オーバーレイタップ）
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.classList.remove('is-open');
+        modalOverlay.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    // 閉じる（Escキーを押したとき）
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('is-open')) {
+        modalOverlay.classList.remove('is-open');
+        modalOverlay.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }
 
   /* ---------------------------------------------------
      3. アコーディオン共通制御（ヘッダータップ時のトグル）
@@ -71,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------------------------------------------------
-     4. 「説明をたたむ」ボタン制御（PC/スマホでスクロール位置を最適化）
+     4. 「説明をたたむ」ボタン制御
   --------------------------------------------------- */
   const aboutCloseBtn = document.getElementById('aboutAccordionCloseBtn');
 
@@ -94,13 +124,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const targetPosition = section.getBoundingClientRect().top + window.pageYOffset - offset;
+        const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
+        if (currentScrollPosition > targetPosition) {
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
       }
     });
   }
-
 });

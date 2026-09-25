@@ -19,27 +19,34 @@
 	<!-- 左サイドバー -->
     <aside class="sidebar" id="sidebar">
       <button type="button" class="sidebar-close-btn" id="sidebarCloseBtn">✕</button>
-      <div class="profile-card">
-        <img src="images/liora.jpg" alt="リオラ アイコン" class="profile-icon" onerror="this.src='https://via.placeholder.com/80/120724/c084fc?text=RIORA'">
-        <div class="profile-name">リオラ</div>
-        <div class="profile-type">ENTP / 討論者型</div>
-      </div>
+		
+<!-- プロフィールカード -->
+<div class="profile-card">
+  <!-- ★ ここ（アイコン＋LINKSバッジの丸い枠）をクリックボタンに変更 -->
+  <div class="profile-icon-wrapper" id="profileCardBtn" role="button" tabindex="0" title="リオラ Official Linksを開く">
+    <img src="images/liora.jpg" alt="リオラ アイコン" class="profile-icon" onerror="this.src='https://via.placeholder.com/80/120724/c084fc?text=RIORA'">
+    <span class="profile-link-badge">🔗 LINKS</span>
+  </div>
+  <div class="profile-name">リオラ</div>
+  <div class="profile-type">ENTP / 討論者型</div>
+</div>
 
       <nav>
         <div class="nav-section-title">CONTENTS INDEX</div>
         <ul class="nav-menu">
-          <li><a href="index.html">🏠 TOP（はじめに）</a></li>
+          <li><a href="index.html" class="active">🏠 TOP（はじめに）</a></li>
           <li><a href="specs.html">1. 基本仕様</a></li>
           <li><a href="functions.html">2. システム構造</a></li>
           <li><a href="usage.html">3. 推奨取り扱い方法</a></li>
           <li><a href="warning.html">4. ⚠️ 禁止事項</a></li>
           <li><a href="troubleshooting.html">5. トラブルシューティング</a></li>
+		  <li><a href="members.html">6. 他モデル仕様書</a></li>
         </ul>
       </nav>
 
       <div class="sidebar-links">
         <div class="nav-section-title">OFFICIAL LINKS</div>
-        <a href="https://www.youtube.com/@%E3%83%AA%E3%82%AA%E3%83%A9" target="_blank" rel="noopener" class="ext-btn youtube">
+        <a href="https://www.youtube.com/@liora1219" target="_blank" rel="noopener" class="ext-btn youtube">
           <span>▶ YouTube Channel</span>
         </a>
         <a href="contact.html" class="ext-btn contact">
@@ -52,7 +59,7 @@
     <main class="main-content">
       <header class="page-header">
         <h1 class="page-title">リオラ（ENTP）取扱説明書</h1>
-        <p class="page-subtitle">RIORA OPERATING MANUAL - SYSTEM VERSION 1.0</p>
+        <p class="page-subtitle">LIORA OPERATING MANUAL - SYSTEM VERSION 1.0</p>
       </header>
 
 <!-- 折りたたみ可能な概要・注意喚起 -->
@@ -65,7 +72,7 @@
   <div class="accordion-body">
     <p class="about-text">
       当サイトは、配信者・リオラさんのトークスタイルや思考プロセスを「MBTI 16タイプ性格診断（ENTP/討論者型）」および「8つの心理機能」の視点から分析・解剖した非公式ファンメイド取扱説明書です。<br>
-      リオラさんの爆速の言語化能力やエンタメとしてのプロレス対応を、より深く理解して配信を楽しむためのガイダンスとしてご利用ください。
+      リオラさんの爆速の言語化能力やエンタメ感あふれるトークバトルを、より深く理解して配信を楽しむためのガイダンスとしてご利用ください。
     </p>
 
     <!-- 注意喚起 -->
@@ -94,7 +101,7 @@
             <div>
               <div class="index-card-num">SECTION 01</div>
               <div class="index-card-title">基本仕様</div>
-              <div class="index-card-desc">コア動力・スペック・動作環境などの基本概要</div>
+              <div class="index-card-desc">コアエンジン・スペック・動作環境などの基本概要</div>
             </div>
             <div class="index-card-arrow">閲覧する ➔</div>
           </a>
@@ -103,7 +110,7 @@
             <div>
               <div class="index-card-num">SECTION 02</div>
               <div class="index-card-title">システム構造</div>
-              <div class="index-card-desc">8つの心理機能モジュール解析</div>
+              <div class="index-card-desc">8つの心理機能モジュール解析と意識・無意識構造</div>
             </div>
             <div class="index-card-arrow">閲覧する ➔</div>
           </a>
@@ -112,7 +119,7 @@
             <div>
               <div class="index-card-num">SECTION 03</div>
               <div class="index-card-title">推奨取り扱い方法</div>
-              <div class="index-card-desc">テンポの早い会話への対応・プロレスの楽しみ方</div>
+              <div class="index-card-desc">テンポの早い会話への対応・エンタメトークの楽しみ方</div>
             </div>
             <div class="index-card-arrow">閲覧する ➔</div>
           </a>
@@ -121,7 +128,7 @@
             <div>
               <div class="index-card-num">SECTION 04</div>
               <div class="index-card-title">⚠️ 禁止事項</div>
-              <div class="index-card-desc">お気持ち論の押し通りやルーティン強制など故障の原因</div>
+              <div class="index-card-desc">感情論の押しつけやルーティン強制など障害要因</div>
             </div>
             <div class="index-card-arrow">閲覧する ➔</div>
           </a>
@@ -130,7 +137,16 @@
             <div>
               <div class="index-card-num">SECTION 05</div>
               <div class="index-card-title">トラブルシューティング</div>
-              <div class="index-card-desc">マシンガン毒舌や急な不関心への対処法</div>
+              <div class="index-card-desc">マシンガン毒舌や急な塩対応への対処法</div>
+            </div>
+            <div class="index-card-arrow">閲覧する ➔</div>
+          </a>
+			
+		  <a href="members.html" class="index-card">
+            <div>
+              <div class="index-card-num">SECTION 06</div>
+              <div class="index-card-title">他モデル仕様書</div>
+              <div class="index-card-desc">リオラ軍団メンバー（他MBTIモデル）の連携・仕様解析</div>
             </div>
             <div class="index-card-arrow">閲覧する ➔</div>
           </a>
@@ -142,14 +158,14 @@
 <div class="page-nav-container">
   <!-- 左：前へ戻る -->
   <a href="contact.html" class="nav-page-btn prev">
-    <span class="nav-btn-label">FEEDBACK & CONTACT</span>
-    <span class="nav-btn-title">⇠ ✉ 管理人へのお問い合わせ</span>
+    <span class="nav-btn-label">← FEEDBACK & CONTACT</span>
+    <span class="nav-btn-title">✉ お問い合わせ</span>
   </a>
 
   <!-- 右：次へ進む -->
   <a href="specs.html" class="nav-page-btn next">
-    <span class="nav-btn-label">START MANUAL</span>
-    <span class="nav-btn-title">1. 基本仕様 ➔</span>
+    <span class="nav-btn-label">START MANUAL →</span>
+    <span class="nav-btn-title">1. 基本仕様</span>
   </a>
 </div>
 
@@ -159,6 +175,88 @@
     </main>
   </div>
 
+<!-- リオラ Official Links モーダル -->
+  <div class="so-modal-overlay" id="lioraModalOverlay" aria-hidden="true">
+    <div class="so-modal-content">
+      <button class="so-modal-close" id="lioraModalCloseBtn" type="button">✕</button>
+      
+      <div class="so-modal-header">
+        <img src="images/liora.jpg" alt="リオラ" class="so-modal-icon" onerror="this.src='https://via.placeholder.com/80/120724/c084fc?text=RIORA'">
+        <div>
+          <div class="so-modal-subtitle">ENTP / 討論者型</div>
+          <h2 class="so-modal-title">リオラ Official Links</h2>
+        </div>
+      </div>
+
+      <div class="so-modal-body">
+        <p class="so-modal-desc">リオラさんの各公式プラットフォーム・SNS一覧です。</p>
+        
+<div class="so-modal-links">
+
+  <!-- 左列：YOUTUBEグループ -->
+  <div class="modal-group">
+    <div class="modal-group-title">▶ YOUTUBE CHANNELS</div>
+    <a href="https://www.youtube.com/channel/UCZLeZXjm_opUQFhLa4I_VFg" target="_blank" rel="noopener" class="so-modal-link-btn youtube">
+      <span class="link-marker">▪</span>
+      <span class="link-text">リオラch-スプラ解説-</span>
+      <span class="link-arrow">➔</span>
+    </a>
+    <a href="https://www.youtube.com/@%E3%83%AA%E3%82%AA%E3%83%A9%E3%81%AE%E9%81%8A%E3%81%B3%E5%A0%B4" target="_blank" rel="noopener" class="so-modal-link-btn youtube">
+      <span class="link-marker">▪</span>
+      <span class="link-text">リオラの遊び場</span>
+      <span class="link-arrow">➔</span>
+    </a>
+    <a href="https://www.youtube.com/channel/UCxatBdEPbu0eMBJYC5KGaqA" target="_blank" rel="noopener" class="so-modal-link-btn youtube">
+      <span class="link-marker">▪</span>
+      <span class="link-text">リオラのスプラ教室</span>
+      <span class="link-arrow">➔</span>
+    </a>
+    <a href="https://www.youtube.com/@vtuber1219" target="_blank" rel="noopener" class="so-modal-link-btn youtube">
+      <span class="link-marker">▪</span>
+      <span class="link-text">リオラ-Vtuberの先生</span>
+      <span class="link-arrow">➔</span>
+    </a>
+    <a href="https://www.youtube.com/@liora2001/videos" target="_blank" rel="noopener" class="so-modal-link-btn youtube">
+      <span class="link-marker">▪</span>
+      <span class="link-text">自由なリオラ</span>
+      <span class="link-arrow">➔</span>
+    </a>
+  </div>
+
+  <!-- 右列：X (TWITTER)グループ -->
+  <div class="modal-group">
+    <div class="modal-group-title">𝕏 X (TWITTER) ACCOUNTS</div>
+    <a href="https://x.com/liora1219" target="_blank" rel="noopener" class="so-modal-link-btn x-twitter">
+      <span class="link-marker">▪</span>
+      <span class="link-text">リオラch👻</span>
+      <span class="link-arrow">➔</span>
+    </a>
+    <a href="https://x.com/Li0ra__" target="_blank" rel="noopener" class="so-modal-link-btn x-twitter">
+      <span class="link-marker">▪</span>
+      <span class="link-text">りおらぴっぴ</span>
+      <span class="link-arrow">➔</span>
+    </a>
+    <a href="https://x.com/liora33333" target="_blank" rel="noopener" class="so-modal-link-btn x-twitter">
+      <span class="link-marker">▪</span>
+      <span class="link-text">リオラさぶさぶ</span>
+      <span class="link-arrow">➔</span>
+    </a>
+    <a href="https://x.com/Renren3353" target="_blank" rel="noopener" class="so-modal-link-btn x-twitter">
+      <span class="link-marker">▪</span>
+      <span class="link-text">リオラ@本垢登録者30万人</span>
+      <span class="link-arrow">➔</span>
+    </a>
+    <a href="https://x.com/liorach" target="_blank" rel="noopener" class="so-modal-link-btn x-twitter">
+      <span class="link-marker">▪</span>
+      <span class="link-text">リオラ@ポーカー</span>
+      <span class="link-arrow">➔</span>
+    </a>
+  </div>
+
+</div>
+    </div>
+  </div>
+	
   <script src="js/common.js"></script>
 </body>
 </html>

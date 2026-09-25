@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>リオラ（ENTP）取扱説明書 - システム構造</title>
+  <title>リオラ（ENTP）取扱説明書 - 他モデル仕様書</title>
   <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/functions.css">
+  <link rel="stylesheet" href="css/members.css">
 </head>
 <body>
 
@@ -35,11 +35,11 @@
         <ul class="nav-menu">
           <li><a href="index.html">🏠 TOP（はじめに）</a></li>
           <li><a href="specs.html">1. 基本仕様</a></li>
-          <li><a href="functions.html" class="active">2. システム構造</a></li>
+          <li><a href="functions.html">2. システム構造</a></li>
           <li><a href="usage.html">3. 推奨取り扱い方法</a></li>
           <li><a href="warning.html">4. ⚠️ 禁止事項</a></li>
           <li><a href="troubleshooting.html">5. トラブルシューティング</a></li>
-          <li><a href="members.html">6. 他モデル仕様書</a></li>
+          <li><a href="members.html" class="active">6. 他モデル仕様書</a></li>
         </ul>
       </nav>
 
@@ -57,61 +57,147 @@
     <!-- 右メインコンテンツエリア -->
     <main class="main-content">
       <header class="page-header">
-        <h1 class="page-title">2. システム構造（8つの心理機能）</h1>
-        <p class="page-subtitle">COGNITIVE FUNCTION SELECTOR</p>
+        <h1 class="page-title">6. グループ製品・他モデル仕様書</h1>
+        <p class="page-subtitle">LINKED UNITS & OTHER MODEL SPECIFICATIONS</p>
       </header>
 
-      <!-- サイド・オーダー風UI（単体セクション枠） -->
-      <section class="manual-section side-order-theme">
-		<h2 class="section-title"> 基本性能（意識機能）</h2>
-        <div class="so-container" id="soContainer">
-          <div class="so-layout-wrapper" id="soWrapper">
-            
-            <!-- 【プレート一覧エリア（左）】 -->
-            <div class="so-plate-list" id="soPlateList"></div>
+      <section class="manual-section">
+        <h2 class="section-title">📁 リオラ軍団モデル一覧</h2>
+        
+		<div class="member-grid">
 
-            <!-- 【詳細解説パネルエリア（右）】 -->
-            <div class="so-detail-panel" id="soDetailPanel">
-              <div class="so-chip-header">
-                <div class="so-chip-icon" id="soChipIcon">Ne</div>
-                <div>
-                  <div class="so-chip-category" id="soChipCategory">主機能 / 意識</div>
-                  <h3 class="so-chip-title" id="soChipTitle">外向的直観</h3>
-                </div>
-              </div>
-              <div class="so-chip-body">
-                <div class="so-chip-status">
-                  <span class="so-status-label">熟練度</span>
-                  <span class="so-status-bar"><i style="width: 100%;"></i></span>
-                  <span class="so-status-val">Lv.MAX（常時フル稼働）</span>
-                </div>
-                <p class="so-chip-desc" id="soChipDesc">
-                  わずかな会話から無限のアイデアと可能性を爆発させるメインエンジン。予測不能で高速なトーク展開を生み出す思考ドライブ。
-                </p>
+          <!-- CARD 1: リオラ (ENTP) ※稼働中（カード全体がリンク） -->
+          <a href="index.html" class="so-chip-card member-card liora">
+            <div class="so-chip-header">
+              <div class="so-chip-icon liora-icon">ENTP</div>
+              <div>
+                <div class="so-chip-category">主軸分析解剖 / 言語化特化</div>
+                <h3 class="so-chip-title member-name"><span class="hl-line">リオラ</span></h3>
               </div>
             </div>
+            <div class="member-card-body">
+              <p class="so-chip-desc">
+				  思考の拡張（Ne）と論理の解剖（Ti）を爆速演算。鋭い言語化で展開を強力に牽引する討論者モデル。
+				</p>
+              <div class="member-card-footer">
+                <span>当マニュアル TOP へ ➔</span>
+              </div>
+            </div>
+          </a>
 
+          <!-- CARD 2: コウチャンネル (ENTJ) ※準備中 -->
+          <!-- ★ 完成後は href="kou.html" を指定し is-disabled クラスを外してください -->
+          <div class="so-chip-card member-card kou is-disabled">
+            <div class="so-chip-header">
+              <div class="so-chip-icon kou-icon">ENTJ</div>
+              <div>
+                <div class="so-chip-category">全体俯瞰指揮 / 盤面支配</div>
+                <h3 class="so-chip-title member-name"><span class="hl-line">コウチャンネル</span></h3>
+              </div>
+            </div>
+            <div class="member-card-body">
+              <p class="so-chip-desc">
+                全体俯瞰（Ni）と超効率な目的遂行（Te）を展開。圧倒的な戦術思考で全軍を率いる指揮官モデル。
+              </p>
+              <div class="member-card-footer">
+                <span>取扱説明書（準備中）</span>
+              </div>
+            </div>
           </div>
 
-          <!-- 右下に配置される切替ボタン -->
-          <div class="so-switch-container">
-            <button class="so-switch-btn" id="soSwitchBtn">
-              <span class="so-btn-text" id="soBtnText">隠し性能（無意識機能） 〉〉</span>
-            </button>
+          <!-- CARD 3: クリックス (ESTP) ※準備中 -->
+          <!-- ★ 完成後は href="kurikku.html" を指定し is-disabled クラスを外してください -->
+          <div class="so-chip-card member-card kurikku is-disabled">
+            <div class="so-chip-header">
+              <div class="so-chip-icon kurikku-icon">ESTP</div>
+              <div>
+                <div class="so-chip-category">前線突破力 / フィジカル特攻</div>
+                <h3 class="so-chip-title member-name"><span class="hl-line">クリックス</span></h3>
+              </div>
+            </div>
+            <div class="member-card-body">
+              <p class="so-chip-desc">
+                現場のフィジカル感性（Se）と即興思考（Ti）が炸裂。圧倒的な肉弾戦で前線を突破する起業家モデル。
+              </p>
+              <div class="member-card-footer">
+                <span>取扱説明書（準備中）</span>
+              </div>
+            </div>
           </div>
+
+          <!-- CARD 4: ぐりげん (ENFP) ※準備中 -->
+          <!-- ★ 完成後は href="gurigen.html" を指定し is-disabled クラスを外してください -->
+          <div class="so-chip-card member-card gurigen is-disabled">
+            <div class="so-chip-header">
+              <div class="so-chip-icon gurigen-icon">ENFP</div>
+              <div>
+                <div class="so-chip-category">展開攪乱メーカー / 予想外爆発力</div>
+                <h3 class="so-chip-title member-name"><span class="hl-line">ぐりげん</span></h3>
+              </div>
+            </div>
+            <div class="member-card-body">
+              <p class="so-chip-desc">
+                無限の発想力（Ne）と独自の熱量（Fi）を放出。予期せぬ展開と爆発力を生み出す運動家モデル。
+              </p>
+              <div class="member-card-footer">
+                <span>取扱説明書（準備中）</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 5: みるとん (ISTP) ※準備中 -->
+          <!-- ★ 完成後は href="miruton.html" を指定し is-disabled クラスを外してください -->
+          <div class="so-chip-card member-card miruton is-disabled">
+            <div class="so-chip-header">
+              <div class="so-chip-icon miruton-icon">ISTP</div>
+              <div>
+                <div class="so-chip-category">省エネ型観察 / 無気力対応</div>
+                <h3 class="so-chip-title member-name"><span class="hl-line">みるとん</span></h3>
+              </div>
+            </div>
+            <div class="member-card-body">
+              <p class="so-chip-desc">
+                最低限の労力で冷静に観察（Ti-Se）する省エネ型。熱量を見せず淡々と処理する巨匠モデル。
+              </p>
+              <div class="member-card-footer">
+                <span>取扱説明書（準備中）</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 6: キルハ (ISFP) ※準備中 -->
+          <!-- ★ 完成後は href="kiruha.html" を指定し is-disabled クラスを外してください -->
+          <div class="so-chip-card member-card kiruha is-disabled">
+            <div class="so-chip-header">
+              <div class="so-chip-icon kiruha-icon">ISFP</div>
+              <div>
+                <div class="so-chip-category">感性特化型 / 独自表現</div>
+                <h3 class="so-chip-title member-name"><span class="hl-line">キルハ</span></h3>
+              </div>
+            </div>
+            <div class="member-card-body">
+              <p class="so-chip-desc">
+                独自の美学（Fi）と直感的な現場対応（Se）を凝縮。鋭い感性と表現力で魅せる冒険家モデル。
+              </p>
+              <div class="member-card-footer">
+                <span>取扱説明書（準備中）</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
       <!-- 左右ページ移動ナビゲーション -->
       <div class="page-nav-container">
-        <a href="specs.html" class="nav-page-btn prev">
+        <a href="troubleshooting.html" class="nav-page-btn prev">
           <span class="nav-btn-label">← PREV SECTION</span>
-          <span class="nav-btn-title">1. 基本仕様</span>
+          <span class="nav-btn-title">5. トラブルシューティング</span>
         </a>
 
-        <a href="usage.html" class="nav-page-btn next">
-          <span class="nav-btn-label">NEXT SECTION →</span>
-          <span class="nav-btn-title">3. 推奨取扱方法</span>
+        <a href="contact.html" class="nav-page-btn next">
+          <span class="nav-btn-label">FEEDBACK & CONTACT →</span>
+          <span class="nav-btn-title">✉ お問い合わせ</span>
         </a>
       </div>
 
@@ -200,6 +286,5 @@
   </div>
 
   <script src="js/common.js"></script>
-  <script src="js/functions.js"></script>
 </body>
 </html>
